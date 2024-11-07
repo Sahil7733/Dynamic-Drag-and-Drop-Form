@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Drag-and-Drop Canvas Editor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a dynamic drag-and-drop editor built with React. It allows users to drag UI elements (Text, Image, Button) from a sidebar onto a canvas and customize their properties. The project is structured with modular components, using React and React DnD for efficient rendering and seamless drag-and-drop functionality.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Architecture
 
-### `npm start`
+### 1. Component Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The application is organized into the following primary components:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **App.js**: Main component that holds the application state and manages communication between other components.
+- **Sidebar**: Displays draggable UI elements (Text, Image, Button) that users can drag onto the canvas.
+- **Canvas**: Serves as the drop target where elements are dynamically rendered based on the `elements` state.
+- **ElementForm**: Provides a form-based interface to edit the properties of the selected element (e.g., text content, image URL, button label) based on its type.
 
-### `npm test`
+### 2. State Management
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **App Component State**:
+  - `elements`: Stores all elements placed on the canvas, with properties like `id`, `type`, and custom properties (content, src, label).
+  - `selectedElement`: Tracks the currently selected element on the canvas for editing in the form.
+  
+- **ElementForm Component State**:
+  - `formData`: Manages form data for the selected element, including content, image URL, and button label. Changes are saved to the main state on clicking the "Save" button.
 
-### `npm run build`
+### 3. Drag-and-Drop Functionality
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The project utilizes **React DnD** for managing drag-and-drop interactions:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Draggable Elements**: Sidebar items are draggable, each containing data about its type (e.g., text, image).
+- **Droppable Canvas**: Canvas component is set as a drop target, accepting draggable elements and triggering the `addElement` function in `App.js` to add the new element.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Tools and Libraries
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **React**: Core JavaScript library for building the user interface.
+- **React DnD**: Manages drag-and-drop interactions in React, using HTML5Backend for native drag-and-drop events.
+- **CSS**: Custom CSS provides a clean, minimalist design with responsive styling.
+- **Node.js & npm**: Manages project dependencies and development scripts.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Approach
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Component-Based Design**: Each UI element and section is split into reusable React components, allowing for a modular and maintainable codebase.
+  
+2. **Form-Based Element Customization**: Each canvas element can be selected and edited through a form in `ElementForm`, which allows structured, consistent customization.
 
-## Learn More
+3. **Single Source of Truth**: All dynamic data is stored in `App.js`’s state, ensuring instant reflection of changes across components.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. **Flexibility for Expansion**:
+   - **Adding New Elements**: Easily add new element types by updating `Sidebar`, `Canvas`, and `ElementForm`.
+   - **Extensible Form Options**: Additional properties like color, size, or alignment can be easily added in the future.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## Project Setup and Running
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Requirements
+- **Node.js** and **npm** must be installed.
 
-### Analyzing the Bundle Size
+### Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Clone the repository:
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   ```bash
+   git clone <repository-url>
+   cd <project-directory>
