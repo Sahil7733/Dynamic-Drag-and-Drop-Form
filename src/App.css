@@ -1,0 +1,126 @@
+.app-container {
+  display: flex;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  color: #333;
+}
+
+
+.sidebar {
+  width: 220px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.draggable-element {
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+  padding: 10px 15px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  background-color: #eaf3ff;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.draggable-element:hover {
+  background-color: #d0e3ff;
+}
+
+
+.canvas {
+  flex: 1;
+  margin: 0 20px;
+  padding: 20px;
+  min-height: 600px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 2px dashed #aaa;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.canvas > div {
+  padding: 12px 20px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #f4f4f4;
+  color: #555;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.canvas > div:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.element-form {
+  width: 220px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.element-form h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.element-form label {
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+  color: #666;
+}
+
+.element-form input,
+.element-form textarea {
+  width: 100%;
+  padding: 8px 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.element-form input:focus,
+.element-form textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.2);
+}
+
+.element-form button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+  width: 100%;
+}
+
+.element-form button:hover {
+  background-color: #0056b3;
+}
