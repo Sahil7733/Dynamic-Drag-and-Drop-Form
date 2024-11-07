@@ -66,5 +66,4 @@ The project utilizes **React DnD** for managing drag-and-drop interactions:
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
-   cd <project-directory>
+   git clone https://github.com/Sahil7733/Dynamic-Drag-and-Drop-Form.git
